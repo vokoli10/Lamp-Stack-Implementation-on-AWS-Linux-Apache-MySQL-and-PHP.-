@@ -1,4 +1,4 @@
-**STEP 3: INSTALLING PHP**.
+# STEP 3: INSTALLING PHP.
 
 We have MySQL installed to store and handle our data, and Apache installed to serve our content. Now we have to install PHP along side with it's dependecies that will execute code and show dynamic material to the user. 
 We'll need php-mysql, a PHP module that enables PHP to interact with MySQL-based databases, in addition to the PHP package. Additionally, libapache2-mod-php is required in order for Apache to handle PHP files. Dependencies for core PHP packages will be installed automatically. 
