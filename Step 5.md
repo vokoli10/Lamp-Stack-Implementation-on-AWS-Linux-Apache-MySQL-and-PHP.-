@@ -63,5 +63,5 @@ If it's not empty, it displays a greeting with the provided name. If the name fi
 </html>
 ```
 
-Now that the moment of truth has arrived, save the file and refresh your browser page to confirm you can see ![Alt Text](https://imgur.com/a/7IqDIhf)
-a basic PHP coded website that prompts the user for their name and greets them. 
+Now that the moment of truth has arrived, save the file and refresh your browser page to confirm you can see the PHP website as seen below. ![Website](https://i.imgur.com/3AYDelh.png)
+
