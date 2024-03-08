@@ -1,4 +1,4 @@
-# STEP 5 - SETTING UP PHP ON THE WEBSITE.
+# STEP 5: SETTING UP PHP ON THE WEBSITE.
 
 By default, when using Apache, if you have both an index.html and an index.php file in a directory, the server will display the index.html file first. This feature is useful for displaying maintenance pages in PHP applications. During maintenance, you can create a temporary index.html file with a message for visitors. Since it takes precedence over index.php, it becomes the main page.
 
