@@ -67,3 +67,11 @@ Now that the moment of truth has arrived, save the file and refresh your browser
 
 ![Website](https://i.imgur.com/3AYDelh.png)
 
+Once you've reviewed the details about your PHP server from that page, it's advisable to delete the file you generated. This file may contain sensitive information regarding your PHP environment and your Ubuntu server.
+
+You run the command to remove files created:
+```bash
+sudo rm /var/www/projectlamp/index.php
+```
+ Congratulations! We have successfully deployed a LAMP stack website on AWS Cloud!
+
