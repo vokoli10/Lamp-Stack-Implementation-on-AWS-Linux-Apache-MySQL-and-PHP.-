@@ -63,5 +63,7 @@ If it's not empty, it displays a greeting with the provided name. If the name fi
 </html>
 ```
 
-Now that the moment of truth has arrived, save the file and refresh your browser page to confirm you can see the PHP website as seen below. ![Website](https://i.imgur.com/3AYDelh.png)
+Now that the moment of truth has arrived, save the file and refresh your browser page to confirm you can see the PHP website as seen below.
+
+![Website](https://i.imgur.com/3AYDelh.png)
 
