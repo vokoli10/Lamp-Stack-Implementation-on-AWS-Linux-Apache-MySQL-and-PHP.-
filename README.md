@@ -1,1 +1,1 @@
-# Lamp-Stack-Implementation-on-AWS-Linux-Apache-MySQL-and-PHP.
+# Lamp-Stack-Implementation-on-AWS. (Linux, Apache, MySQL & PHP)
