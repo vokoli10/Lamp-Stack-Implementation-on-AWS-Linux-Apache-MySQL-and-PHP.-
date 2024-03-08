@@ -14,8 +14,6 @@ A web stack: what is it? A webstack is a collection of tools and frameworks used
 
 Apache is web server software that is responsible for accepting HTTP requests from visitors and sending them back the requested information in the form of web pages. Or, in simpler terms, it allows visitors to view content on your website. We have other webservers such as Nginx, Lighttpd, etc.
 
-### 1. Update and Upgrade Ubuntu Server
-
 First things first, update and upgrade your Ubuntu server using the following command:
 
 ```bash
