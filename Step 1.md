@@ -1,55 +1,41 @@
-# SETTING UP A LAMP STACK ON UBUNTU SERVER
+## WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
+### ASW account setup and provisioning an Ubuntu Server
+#### Steps
+1. Signed up for an AWS account.
+2. Logged in as IAM user
+3. In the VPC console, I create Security Group
+![Project1pix2](https://user-images.githubusercontent.com/74002629/174605346-f0f4b1bc-0e4e-45f7-ac6e-6a49ae27600a.PNG)
 
-This guide will walk you through the process of setting up a LAMP (Linux, Apache, MySQL, PHP) stack on an Ubuntu Server.
-Now you might ask, What is Webstack? Lamp stack?
-A web stack: what is it? A webstack is a collection of tools and frameworks used in software development. This collection of frameworks and tools has been carefully selected to complement one another in order to produce software that functions properly. These are abbreviations for distinct technologies combined for a particular technology product. Here are a few webstacks below:
+4. Launched an EC2 instance
+5. I selelected the Ubuntu free tier instance
+6. I set the required configurations (Enabled public IP, security group, and key pair) and finally launched the instance.
+![project1pix3](https://user-images.githubusercontent.com/74002629/174606543-32845537-efdd-4abe-a903-82a20f3bbb80.PNG)
 
-- LAMP - (Linux, Apache, MySQL, PHP, Perl, or Python)
-- LEMP - (Linux, Nginx, MySQL, PHP, Perl, or Python)
-- MERN - (MongoDB, ExpressJS, ReactJS and NodeJS)
-- MEAN - (MongoDB, ExpressJS, AngularJS and NodeJS)
+7. Next I SSH into the instance using Windows Terminal
+8. In the Terminal, I typed cd Downloads to navigate to the locxcation of my key-pair.
+9. Inside the Downloads directory, I connect to my instance using its Public DNS.
+![project1pix4](https://user-images.githubusercontent.com/74002629/174608684-dadf6c62-f32f-4abf-99bf-dd6078bcf279.PNG)
+![project1pix5](https://user-images.githubusercontent.com/74002629/174608722-755ce47c-4c8e-475c-a399-43e314235364.PNG)
 
+### INSTALLING APACHE AND UPDATING THE FIREWALL
+#### Steps
+1. Install Apache using Ubuntu’s package manager ‘apt', Run the following commands: To update a list of packages in package manager:
+*sudo apt update*
+![Project1pix6](https://user-images.githubusercontent.com/74002629/176584111-c2fd6d3e-d34a-49c1-854c-8ff272d7b7ca.PNG)
 
-## STEP 1: INSTALLING APACHE WEB SERVER AND UPDATING THE FIREWALL
+2. To run apache2 package installation:
+*sudo apt install apache2*
+3. Next, verify that Apache2 is running as a service in the OS. run:
+*sudo systemctl status apache2*
+4. The green light indicates Apache2 is running.
+5. ![Project1pix8](https://user-images.githubusercontent.com/74002629/176584784-e6c1af68-19c6-4fdd-8551-10d1a223c33d.PNG)
 
-Apache is web server software that is responsible for accepting HTTP requests from visitors and sending them back the requested information in the form of web pages. Or, in simpler terms, it allows visitors to view content on your website. We have other webservers such as Nginx, Lighttpd, etc.
+6. Open port 80 on the Ubuntu instance to allow access from the internet.
+7. Access the Apache2 service locally in our Ubuntu shell by running: 
+*curl http://localhost:80* or *curl http://127.0.0.1:80* This command would output the Apache2 payload indicating that it is accessible locally in the Ubuntu shell.
+8. Next, test that Apache HTTP server can respond to requests from the Internet. Open a browser and type the public IP of the Ubutun instance: *http://3.235.248.184/:80* This outputs the Apache2 default page.
+![Project1pix9](https://user-images.githubusercontent.com/74002629/176584558-a98ef686-4ea4-4df6-8d15-d695377c7d89.PNG)
 
-First things first, update and upgrade your Ubuntu server using the following command:
-
-```bash
-sudo apt update && sudo upgrade -y
-```
-Install Apache web server using Ubuntu's package manager, 'apt', so run the command:
-```bash
-sudo apt install apache2
-```
-To verify if Apache Web Server has been downloaded successfully and is currently running on your operating system, run the command:
-```bash
-sudo systemctl status apache2
-```
-Chances are, once you've run the command to check for Apache HTTP Server (httpd), it might be currently inactive or stopped on your system. The status inactive (dead) indicates that the service is not running.
-To start Apache HTTP Server, you can use the following command:
-```bash
-sudo systemctl start apache2
-```
-After starting the service, you can check its status again to ensure that it's running properly.
-However, if you want Apache HTTP Server to start automatically upon system boot, you can enable it using the command:
-```bash
-sudo systemctl enable apache2
-```
-This will ensure that Apache starts automatically whenever the system boots up.
-
-### PORT MAPPING 
-Since our EC2 machine's TCP port 22 is open by default for SSH access, we must add a rule to the EC2 setup in order to allow inbound connections through port 80: Allow incoming traffic through port 80.
-
-EC2 → SECURITY GROUPS → EDIT INBOUND RULES.
-
-This ensures we can reach our server both locally and remotely (from any IP address) using the URL source 0.0.0.0/0. Our server is up and operating.
-It's time to see how well our Apache HTTP server can handle requests from the Internet at this point. Try to visit the  URL in your preferred web browser: Insert your Public IP address mapped to port 80.
-
-```bash
-http://<Public-IP-Address>:80
-```
 
 
 
