@@ -1,33 +1,14 @@
-## STEP 2: INSTALLING MySQL.
-To manage and store data for your website in a relational database, you must install a database management system (DBMS) after starting your web server. 
-Since MySQL is a popular relational database management system in PHP settings, we're going to use it for our project. 
-In accordance with [link](https://www.statista.com/statistics/809750/worldwide-popularity-ranking-database-management-systems/) MySQL is the second most widely used database management system on the planet.
+### INSTALLING MYSQL
+#### Steps
+In this step, I install a Database Management System (DBMS) to be able to store and manage data for the site in a relational database.
+1. Run ‘apt’ to acquire and install this software, run: *sudo apt install mysql-server*
+2. Confirm intallation by typing Y when prompted.
+3. Once installation is complete, log in to the MySQL console by running: *sudo mysql*
+![Project1pix11](https://user-images.githubusercontent.com/74002629/176585224-e55ca7bb-73a7-464a-9172-7161ba5b434b.PNG)
 
-To install MySQL on your server, run the command:
-```bash
-Sudo apt install mysql-server -y
-```
-After installation, it's often recommended that you run a security script that comes preinstalled with MySQL. This script will remove some insecure default settings (not all) and lock down access to your database system.
-Start the script by running the command:
-```bash
-sudo mysql_secure_installation
-```
-Immediately you will be prompted to **VALIDATE THE PASSWORD COMPONENT**. This is being used to test passwords and improve security. It checks the strength of the password and allows the users to set only those passwords that are secure enough. 
+4. Next, run a security script that comes pre-installed with MySQL, to remove some insecure default settings and lock down access to your database system. run: 
+*ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';* then exit MySQL shell by typing exit and enter.
+5. Run interactive script by typing: *sudo mysql_secure_installation* and following the instrustions.
+6. Next, test that login to MySQL console works. Run: *sudo mysql -p* 
+![Project1pix21](https://user-images.githubusercontent.com/74002629/176585784-48ef1dd3-049f-45d1-a7df-884764d14d22.PNG)
 
-Would you like to set up the **VALIDATE PASSWORD** component?
-
-```bash
-Press y|Y for Yes, any other key for No:
-```
-After selecting your choice, you will be prompted with many options, such as privileges, anonymous users, and test databases. 
-Upon completion of all of this, the installation will be secured.
-
-Now let's login to the database with the command:
-```bash
-sudo mysql
-```
-And to exit the MySql Database, we use the command:
-```bash
-exit
-```
-Now, we have established that the MySQL server is now installed and secured. Next, we will install PHP, the final component in the **LAMP stack**.
